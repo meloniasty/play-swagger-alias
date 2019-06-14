@@ -1,16 +1,14 @@
 ###
-#  summary: Get logged user provision table
+#  summary: Get logged user
 #  parameters:
 #   - name: category_id
 #     in: query
 #     type: integer
 #     required: false
-#     description: Application category id
 #   - name: product_type
 #     in: query
 #     type: string
 #     enum: *COLORS
-#     description: Producty type. Will be mapped to categoryId, so it is used when category_id is not set or empty.
 #   - name: date
 #     in: query
 #     type: string
