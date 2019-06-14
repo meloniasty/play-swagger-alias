@@ -1,0 +1,45 @@
+---
+  swagger: "2.0"
+  info:
+    title: "API"
+    description: "My API is the best"
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  securityDefinitions:
+      Bearer:
+          type: apiKey
+          name: Authorization
+          in: header
+
+  security:
+      - Bearer: []
+
+  components:
+    schemas:
+      Colors:
+      type: string
+      enum: &COLORS
+        - black
+        - white
+        - red
+        - green
+        - blue
+      Bank:
+        type: object
+        properties:
+          id:
+            type: integer
+            description: Bank ID.
+          name:
+            type: string
+            description: Bank name.
+          code:
+            type: string
+            description: Bank main code.
+          symbols:
+            type: array
+            items:
+              type: string
+            description: Array of all bank codes.

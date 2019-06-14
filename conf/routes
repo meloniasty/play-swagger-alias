@@ -1,0 +1,41 @@
+###
+#  summary: Get logged user provision table
+#  parameters:
+#   - name: category_id
+#     in: query
+#     type: integer
+#     required: false
+#     description: Application category id
+#   - name: product_type
+#     in: query
+#     type: string
+#     enum: *COLORS
+#     description: Producty type. Will be mapped to categoryId, so it is used when category_id is not set or empty.
+#   - name: date
+#     in: query
+#     type: string
+#     pattern: '^\d{2}-\d{2}-\d{4}$'
+#     required: false
+#     description: Date in format dd-MM-yyyy
+#  responses:
+#    200:
+#       description: json with provision table definitions
+###
+GET        /users        controllers.HomeController.index
+
+
+
+###
+#  summary: Return list of banks defined in system
+#  responses:
+#      schema:
+#        $ref: '#/components/schemas/Bank'
+###
+GET         /banks                        controllers.HomeController.bank
+
+
+### NoDocs ###
+GET   /docs/swagger-ui/*file        controllers.Assets.at(path:String="/public/lib/swagger-ui", file:String)
+
+### NoDocs ###
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
